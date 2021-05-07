@@ -5,6 +5,7 @@ import Form from '../components/styles/Form';
 import ErrorMessage from '../components/ErrorMessage';
 import gql from 'graphql-tag';
 import { ALL_PRODUCTS_QUERY } from './Products';
+import Router from 'next/router';
 
 const CREATE_PRODUCT_MUTATION = gql`
   mutation CREATE_PRODUCT_MUTATION(
@@ -51,6 +52,7 @@ function CreateProduct() {
         e.preventDefault();
         const res = await createProduct(inputs);
         clearForm();
+        Router.push({ pathname: `/product/${res.data.createProduct.id}` });
         // submit the inputFields to the backend
       }}
     >
