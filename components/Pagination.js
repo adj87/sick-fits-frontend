@@ -27,10 +27,12 @@ export default function Pagination({ page }) {
       <Link href={`/products/${page - 1}`} aria-disabled={page === 1}>
         <a aria-disabled={page <= 1}>Prev </a>
       </Link>
-      <p>Page 1 of {pageCount}</p>
+      <p>
+        Page {page} of {pageCount}
+      </p>
       <p>Items total {count}</p>
       <Link href={`/products/${page + 1}`}>
-        <a aria-disabled={page >= pageCount}>Prev </a>
+        <a aria-disabled={page >= pageCount}>Next </a>
       </Link>
     </PaginationStyles>
   );
