@@ -1,0 +1,2 @@
+docker build -t sf-front .
+docker run -v $(pwd):/app -d -p 7777:7777 --name sf-front sf-front
