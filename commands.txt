@@ -1,2 +1,4 @@
 docker build -t sf-front .
-docker run -v $(pwd):/app -d -p 7777:7777 --name sf-front sf-front
+
+// recuerda estar en sick-fits-frontend
+docker run -v $(pwd):/app -d -p 7777:7777 --name sf-front-container sf-front
